@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.7.3.201602250914-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/main/webapp/WEB-INF/config/dispatcher-servlet.xml</config>
+	</configs>
+	<autoconfigs>
+		<config>src/main/resources/config/context-datasource.xml</config>
+		<config>src/main/resources/config/context-aspect.xml</config>
+		<config>src/main/resources/config/context-common.xml</config>
+		<config>src/main/resources/config/context-idgen.xml</config>
+		<config>src/main/resources/config/context-mapper.xml</config>
+		<config>src/main/resources/config/context-transaction.xml</config>
+		<config>src/main/resources/config/context-validator.xml</config>
+		<config>src/main/resources/config/context-properties.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>
