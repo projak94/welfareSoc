@@ -17,8 +17,12 @@ public class MainService extends EgovAbstractServiceImpl {
     @Resource(name="MainDao")
     private MainDao MainDao;
 
-    public List<HashMap<String, Object>> getAcctCtrlList(Map<String, Object> inputMap) throws Exception {
+    public List<HashMap<String, String>> getAcctCtrlList(Map<String, Object> inputMap) throws Exception {
         return MainDao.getAcctCtrlList(inputMap);
+    }
+    
+    public HashMap<String, String> getMngrInfo(Map<String, Object> inputMap) throws Exception {
+        return MainDao.getMngrInfo(inputMap);
     }
 
 }

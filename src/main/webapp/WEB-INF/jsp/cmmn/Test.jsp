@@ -17,8 +17,8 @@
     <table>
         <c:forEach var="data" items="${testList }" varStatus="status">
           <tr>
-            <td>${data.ACCT_CODE }</td>
-            <td>${data.ACCT_TRAN_GBN }</td>
+            <td>${data.MNG_ID }</td>
+            <td>${data.MNG_NAME }</td>
           </tr>
         </c:forEach>
     </table>

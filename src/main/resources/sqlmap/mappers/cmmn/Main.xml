@@ -2,10 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="welfare.cmmn.dao.MainDao">
 
+
+<select id="getMngrInfo" resultType="hashmap" parameterType="hashmap">
+    SELECT MNG_ID
+         , MNG_NAME
+      FROM MANAGER_TAB
+     WHERE MNG_ID     = #{mng_id}
+       AND MNG_PASSWD = #{mng_pw}
+</select>
+
 <select id="getAcctCtrlList" resultType="hashmap" parameterType="hashmap">
-    SELECT ACCT_CODE
-         , ACCT_TRAN_GBN 
-      FROM KUMKANG_ACCT_CTRL
+    SELECT MNG_ID
+         , MNG_NAME 
+      FROM MANAGER_TAB
 </select>
 
 </mapper>

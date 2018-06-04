@@ -6,9 +6,9 @@
 	
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-        <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=kumkang" />
-        <property name="username" value="kumkang"/>
-        <property name="password" value="kumkang"/>
+        <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=welfare" />
+        <property name="username" value="welfare"/>
+        <property name="password" value="welfare"/>
     </bean>
     
 </beans>

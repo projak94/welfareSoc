@@ -13,12 +13,12 @@
 <title><spring:message code="title.circle" /></title>
 </head>
 <body>
-    <form name="sForm" method="post" >
+    <form name="sForm" method="post" id="sForm">
         <h2>로그인</h2>
         <div>
           <dl>
             <dt><label for="mng_id">아이디</label></dt>
-            <dd><input style="width:190px;" type="text" name="user_id" title="아이디" maxlength="16"/></dd>
+            <dd><input style="width:190px;" type="text" name="mng_id" title="아이디" maxlength="16"/></dd>
             <dt><label for="mng_pw">비밀번호</label></dt>
             <dd><input style="width:190px;" type="password" name="mng_pw" title="비밀번호" maxlength="20"/></dd>
           </dl>
@@ -31,7 +31,39 @@
 <script src="<c:url value='/js/jquery/jquery-3.3.1.min.js'/>"></script>
 <script>
     $("#loginBtn").click(function(){
-      alert();
+      var form = document.sForm;
+      if ($("input[name=mng_id]").val() == "") {
+        alert("아이디를 입력하세요.");
+        this.focus();
+        return false;
+      }
+      if ($("input[name=mng_pw]").val() == "") {
+        alert("비밀번호를 입력하세요.");
+        this.focus();
+        return false;
+      }
+
+      $.ajax({
+        type : "POST",
+        url : "<c:url value='/mngLogin.do'/>",
+        dataType : 'json',
+        data : $("#sForm").serialize(),
+        success : function(data) {
+          if (data) {
+            if (data.returnPage != "") {
+              form.action = "<c:url value='"+data.returnPage+"'/>";
+              form.submit();
+            } else {
+              console.log(data);
+              alert(data.returnMsg);
+              $("input[name=mng_id]").focus();
+            }
+          } else {
+            alert('DB접속 오류입니다.');
+            return;
+          }
+        }
+      });
     });
 </script>
 </body>
